@@ -21,6 +21,8 @@ def extract():
 def getFile(f, hash):
     file, tmp = download(f, hash)
     tables = tabula.read_pdf(file, pages="all")
+    tabula.convert_into("reader_" + file, tmp + "output.csv", output_format="csv", pages="all")
+
     print(tables)
 
 
