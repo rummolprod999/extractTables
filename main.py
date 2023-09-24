@@ -19,9 +19,9 @@ def extract():
 
 
 def getFile(f, hash):
-   file, tmp = download(f, hash)
-   tables = tabula.read_pdf(file, pages="all")
-   print(tables)
+    file, tmp = download(f, hash)
+    tables = tabula.read_pdf(file, pages="all")
+    print(tables)
 
 
 def download(f, hash):
