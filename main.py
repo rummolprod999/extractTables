@@ -42,7 +42,7 @@ def download(f, hash):
               'wb') as f:
         for chunk in r.iter_content(1024):
             f.write(chunk)
-    return (os.path.abspath(temp_file), f"{hash}/temp")
+    return os.path.abspath(temp_file), f"{hash}/temp"
 
 
 if __name__ == '__main__':
