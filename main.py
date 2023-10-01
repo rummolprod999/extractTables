@@ -30,8 +30,7 @@ def extract():
 
 def getFile(f, hash):
     file = download(f, hash)
-    tables = tabula.read_pdf(file, pages="all")
-    csv_ = file + ".csv"
+    csv_ = f"{file}.csv"
     tabula.convert_into(file, csv_, output_format="csv", pages="all")
     filename = file.replace("/temp", "") + ".xlsx"
     merge_all_to_a_book(glob.glob(csv_), filename)
